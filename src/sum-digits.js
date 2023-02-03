@@ -13,12 +13,9 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function getSumOfDigits(n) {
-  return String(n).length > 1
+  return n >= 10
     ? getSumOfDigits(
-        String(n)
-          .split('')
-          .map(Number)
-          .reduce((acc, cur) => acc + cur)
+        Array.from(String(n), Number).reduce((sum, digit) => sum + digit)
       )
     : n;
 }

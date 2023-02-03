@@ -24,8 +24,7 @@ function dateSample(sampleActivity) {
   if (sample > 0 && sample <= 14.8) {
     return Math.abs(
       Math.floor(
-        (HALF_LIFE_PERIOD * Math.log(sampleActivity / MODERN_ACTIVITY)) /
-          Math.log(2)
+        (HALF_LIFE_PERIOD * Math.log(sample / MODERN_ACTIVITY)) / Math.log(2)
       )
     );
   }
